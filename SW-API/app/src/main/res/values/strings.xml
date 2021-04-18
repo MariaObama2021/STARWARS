@@ -16,6 +16,22 @@
         <item>HOLA</item>
     </string-array>
 
+    <string-array name="selectListaPersona">
+        <item>PEROSONA_1</item>
+        <item>PEROSONA_2</item>
+        <item>PEROSONA_3</item>
+        <item>PEROSONA_4</item>
+        <item>PEROSONA_5</item>
+        <item>PEROSONA_6</item>
+        <item>PEROSONA_7</item>
+        <item>PEROSONA_8</item>
+        <item>PEROSONA_9</item>
+        <item>PEROSONA_10</item>
+        <item>PEROSONA_11</item>
+        <item>PEROSONA_12</item>
+        <item>PEROSONA_13</item>
+    </string-array>
+
     <string-array name="swFilms">
         <item>Title</item>
         <item>Episode ID</item>
