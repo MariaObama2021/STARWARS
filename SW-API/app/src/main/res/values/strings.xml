@@ -1,0 +1,110 @@
+<resources>
+    <string name="app_name">StarWarsApp</string>
+    <string-array name="selectLista">
+        <item>HOLA</item>
+        <item>HOLA</item>
+        <item>HOLA</item>
+        <item>HOLA</item>
+        <item>HOLA</item>
+        <item>HOLA</item>
+        <item>HOLA</item>
+        <item>HOLA</item>
+        <item>HOLA</item>
+        <item>HOLA</item>
+        <item>HOLA</item>
+        <item>HOLA</item>
+        <item>HOLA</item>
+    </string-array>
+
+    <string-array name="swFilms">
+        <item>Title</item>
+        <item>Episode ID</item>
+        <item>opening crawl</item>
+        <item>director</item>
+        <item>release_date</item>
+        <item>species</item>
+        <item>starships</item>
+        <item>vehicles</item>
+        <item>characters</item>
+        <item>planets</item>
+        <item>url</item>
+        <item>created</item>
+        <item>edited</item>
+    </string-array>
+    
+    <string-array name="swPeople">
+        <item>HOLA</item>
+        <item>HOLA</item>
+        <item>HOLA</item>
+        <item>HOLA</item>
+        <item>HOLA</item>
+        <item>HOLA</item>
+        <item>HOLA</item>
+        <item>HOLA</item>
+        <item>HOLA</item>
+        <item>HOLA</item>
+        <item>HOLA</item>
+        <item>HOLA</item>
+        <item>HOLA</item>
+    </string-array>
+    <string-array name="swPlanets">
+        <item>HOLA</item>
+        <item>HOLA</item>
+        <item>HOLA</item>
+        <item>HOLA</item>
+        <item>HOLA</item>
+        <item>HOLA</item>
+        <item>HOLA</item>
+        <item>HOLA</item>
+        <item>HOLA</item>
+        <item>HOLA</item>
+        <item>HOLA</item>
+        <item>HOLA</item>
+        <item>HOLA</item>
+    </string-array>
+    <string-array name="swSpecies">
+        <item>HOLA</item>
+        <item>HOLA</item>
+        <item>HOLA</item>
+        <item>HOLA</item>
+        <item>HOLA</item>
+        <item>HOLA</item>
+        <item>HOLA</item>
+        <item>HOLA</item>
+        <item>HOLA</item>
+        <item>HOLA</item>
+        <item>HOLA</item>
+        <item>HOLA</item>
+        <item>HOLA</item>
+    </string-array>
+    <string-array name="swStarShips">
+        <item>HOLA</item>
+        <item>HOLA</item>
+        <item>HOLA</item>
+        <item>HOLA</item>
+        <item>HOLA</item>
+        <item>HOLA</item>
+        <item>HOLA</item>
+        <item>HOLA</item>
+        <item>HOLA</item>
+        <item>HOLA</item>
+        <item>HOLA</item>
+        <item>HOLA</item>
+        <item>HOLA</item>
+    </string-array>
+    <string-array name="swVehicles">
+        <item>HOLA</item>
+        <item>HOLA</item>
+        <item>HOLA</item>
+        <item>HOLA</item>
+        <item>HOLA</item>
+        <item>HOLA</item>
+        <item>HOLA</item>
+        <item>HOLA</item>
+        <item>HOLA</item>
+        <item>HOLA</item>
+        <item>HOLA</item>
+        <item>HOLA</item>
+        <item>HOLA</item>
+    </string-array>
+</resources>
