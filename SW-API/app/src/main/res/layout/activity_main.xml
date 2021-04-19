@@ -9,6 +9,19 @@
     tools:context=".MainActivity">
 
 
+    <Button
+        android:id="@+id/refrescarLista"
+        android:layout_width="111dp"
+        android:layout_height="37dp"
+        android:layout_alignBottom="@+id/titulo"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="0dp"
+        android:layout_marginBottom="0dp"
+        android:layout_toEndOf="@+id/titulo"
+        android:clickable="true"
+        android:onClick="clickRecargarLista"
+        android:text="recargar" />
+
     <TextView
         android:id="@+id/titulo"
         android:layout_width="158dp"
@@ -34,7 +47,9 @@
             android:layout_marginStart="40dp"
             android:layout_marginTop="10dp"
             android:layout_marginBottom="190dp"
-            android:text="Films" />
+            android:text="Films"
+            android:clickable="true"
+            android:onClick="clickMostrarListadoDatosPelicula"/>
 
         <Button
             android:id="@+id/bt_People"
@@ -43,7 +58,9 @@
             android:layout_marginStart="20dp"
             android:layout_marginTop="10dp"
             android:layout_marginBottom="0dp"
-            android:text="People" />
+            android:text="People"
+            android:clickable="true"
+            android:onClick="clickMostrarListadoDatosPersona"/>
 
         <Button
             android:id="@+id/bt_StarShip"
@@ -54,7 +71,9 @@
             android:layout_marginEnd="40dp"
             android:layout_marginBottom="0dp"
             android:layout_toEndOf="@+id/bt_People"
-            android:text="Star Ship" />
+            android:text="Star Ship"
+            android:clickable="true"
+            android:onClick="clickMostrarDatosEstrella"/>
     </LinearLayout>
 
     <LinearLayout
