@@ -60,7 +60,7 @@
     <LinearLayout
         android:id="@+id/scrool"
         android:layout_width="match_parent"
-        android:layout_height="313dp"
+        android:layout_height="wrap_content"
         android:layout_below="@+id/ll_BotonesBusqueda"
         android:layout_marginTop="5dp"
         android:background="@color/colorPrimary">
@@ -69,46 +69,13 @@
             android:layout_height="wrap_content"
             android:orientation="vertical"
             android:background="@color/colorPrimary">
-
             <ListView
                 android:id="@+id/lista_Id"
+                android:choiceMode="multipleChoice"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="STAR WARS"
                 android:textColor="#181819"/>
-        </LinearLayout>
-    </LinearLayout>
-
-
-    <TextView
-        android:id="@+id/resultText"
-        android:layout_width="262dp"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/scrool"
-        android:layout_marginTop="5dp"
-        android:text="Resultado Busqueda"
-        android:textSize="20dp" />
-
-
-    <LinearLayout
-        android:id="@+id/scrool2"
-        android:layout_width="match_parent"
-        android:layout_height="313dp"
-        android:layout_below="@+id/resultText"
-        android:layout_marginTop="5dp"
-        android:background="@color/colorPrimary">
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="vertical">
-
-            <ListView
-                android:id="@+id/lista_datos"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="TextView"
-                android:textColor="@android:color/black" />
         </LinearLayout>
     </LinearLayout>
 </RelativeLayout>

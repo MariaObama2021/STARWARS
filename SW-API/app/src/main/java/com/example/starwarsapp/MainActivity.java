@@ -12,6 +12,7 @@ import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.ListView;
 import android.widget.SimpleAdapter;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import java.lang.reflect.Array;
@@ -28,6 +29,7 @@ public class MainActivity extends AppCompatActivity {
     Button bnPersona;
     Button bnPelicula;
     Button bnStar;
+    TextView twlistaDatos;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -87,7 +89,7 @@ public class MainActivity extends AppCompatActivity {
             public void onItemClick(AdapterView<?> adapterView, View view, int position, long id) {
 
                 Object obj = lista_Id.getAdapter().getItem(position);
-                Toast.makeText(getBaseContext(), obj.toString(), Toast.LENGTH_SHORT).show();
+                //Toast.makeText(getBaseContext(), obj.toString(), Toast.LENGTH_SHORT).show();
             }
         });
 
@@ -108,7 +110,7 @@ public class MainActivity extends AppCompatActivity {
 
     //Metodo muestra una personas por el nº de peliculas
     public void mostrarListadoDatosPelicula() {
-        String[] nomPersona = {"STAR WARS1", "STAR WARS2", "STAR WARS3", "STAR WARS4", "STAR WARS5", "STAR WARS6", "STAR WARS7"};
+        String[] nomPersona = {"ANAKIN1", "ANAKIN2", "ANAKIN3", "ANAKIN4", "ANAKIN5", "ANAKIN6", "ANAKIN7"};
         String[] idPersona = {"1", "2", "3", "4", "5", "6", "7"};
 
         ArrayList<Map<String, Object>> listadoDatos = new ArrayList<>();
@@ -126,7 +128,7 @@ public class MainActivity extends AppCompatActivity {
         System.out.println(listadoDatos);
 
         SimpleAdapter simpleAdapter = new SimpleAdapter(this, listadoDatos,
-                android.R.layout.simple_expandable_list_item_2,
+                android.R.layout.simple_list_item_2,
                 new String[]{"Nombre", "idPersona"}, new int[]{android.R.id.text1, android.R.id.text2});
 
         this.lista_Id.setAdapter(simpleAdapter);
@@ -136,10 +138,9 @@ public class MainActivity extends AppCompatActivity {
             public void onItemClick(AdapterView<?> adapterView, View view, int position, long id) {
 
                 Object obj = lista_Id.getAdapter().getItem(position);
-                Toast.makeText(getBaseContext(), obj.toString(), Toast.LENGTH_SHORT).show();
+                // Toast.makeText(getBaseContext(), obj.toString(), Toast.LENGTH_SHORT).show();
             }
         });
-
     }
 
     //Metodo que selecciona varias peliculas y muestra la persona que conduce la nave mas manejada
@@ -162,7 +163,7 @@ public class MainActivity extends AppCompatActivity {
         // System.out.println(listadoDatos);
 
         SimpleAdapter simpleAdapter = new SimpleAdapter(this, listadoDatosPersonas,
-                android.R.layout.simple_expandable_list_item_2,
+                android.R.layout.simple_list_item_2,
                 new String[]{"Nombre", "Cant-Nave"}, new int[]{android.R.id.text1, android.R.id.text2});
 
         this.lista_Id.setAdapter(simpleAdapter);
@@ -172,7 +173,7 @@ public class MainActivity extends AppCompatActivity {
             public void onItemClick(AdapterView<?> adapterView, View view, int position, long id) {
 
                 Object obj = lista_Id.getAdapter().getItem(position);
-                Toast.makeText(getBaseContext(), obj.toString(), Toast.LENGTH_SHORT).show();
+
             }
         });
 
