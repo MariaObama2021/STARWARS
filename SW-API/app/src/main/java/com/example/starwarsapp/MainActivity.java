@@ -1,6 +1,7 @@
 package com.example.starwarsapp;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.room.Database;
 
 import android.os.AsyncTask;
 import android.os.Bundle;
@@ -13,6 +14,7 @@ import android.widget.ListView;
 import android.widget.SimpleAdapter;
 import android.widget.Toast;
 
+import com.example.starwarsapp.ConexionHTTP.DataBase;
 import com.example.starwarsapp.ConexionHTTP.Handler;
 
 import org.json.JSONArray;
@@ -27,17 +29,71 @@ import java.util.Map;
 
 
 public class MainActivity extends AppCompatActivity {
+
+    public String urlPeople = "http https://swapi.dev/api/people/";
+    public String urlFilms = "http https://swapi.dev/api/films/";
+    public String urlPlanets = "http https://swapi.dev/api/planets";
+    public String urlSpecies = "http https://swapi.dev/api/species";
+    public String urlStarships = "http https://swapi.dev/api/starships";
+    public String urlVehicles = "http https://swapi.dev/api/vehicles";
+
     public ListView lista_Id;
+    public String str = "";
+    public  ArrayList arrayList;
+    DataBase dataBase;
+
     public ArrayAdapter<String> ejemplo_datos;
-    public String url="https://swapi.dev/api/";
     ArrayList<String[]> nameList;
+
+    /*films string -- The URL root for Film resources
+    people string -- The URL root for People resources
+    planets string -- The URL root for Planet resources
+    species string -- The URL root for Species resources
+    starships string -- The URL root for Starships resources
+    vehicles string -- The URL root for Vehicles resources*/
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
     }
 
+    public void leerDatosAPIFilm() {
+
+        dataBase = new DataBase(this);
+        dataBase.getWritableDatabase();
+        try {
+            JSONObject jsonObject = new JSONObject(urlFilms);
+            JSONArray jsonArray = jsonObject.getJSONArray("films");
+            for (int i = 0; i < jsonArray.length(); i++)
+            {
+                JSONObject jsonObject1 = jsonArray.getJSONObject(i);
+                String id = jsonObject1.getString("id").toString();
+                String name = jsonObject1.getString("name").toString();
+                String salary = jsonObject1.getString("salary").toString();
+                dataBase.insertDataFilms();
+                str += "\n Employee" + i + "\n name:" + name + "\n id:" + id + "\n salary:" + salary + "\n";
+                //textView1.setText(str);
+            }
+
+
+
+        }catch (JSONException e)
+        {
+            e.printStackTrace();
+        }
+
+    }
+
+
+    //Metod que muestrar lista
+    public void clickRecargarLista(View view) {
+        lista_Id = findViewById(R.id.lista_Id);
+        nameList = new ArrayList<String[]>();
+
+        mostrarMostrarBBDD();
+    }
 
     //Metodo muestra una personas por el nº de peliculas
     public void clickMostrarListadoDatosPelicula(View view) {
@@ -108,65 +164,6 @@ public class MainActivity extends AppCompatActivity {
     public void clickMostrarDatosEstrella(View view) {
 
 
-    }
-
-    //Metod que muestrar lista
-    public void clickRecargarLista(View view) {
-        lista_Id = findViewById(R.id.lista_Id);
-        nameList=new ArrayList<String[]>();
-
-        mostrarMostrarBBDD();
-    }
-
-    public class  getNames extends AsyncTask<Void,Void,Void>{
-
-        
-
-        @Override
-        protected Void doInBackground(Void... voids) {
-            Handler handler=new Handler();
-            String jsonString= handler.httServiceCall(url);
-            if(jsonString !=null){
-                try {
-                    JSONObject jsonObject=new JSONObject(jsonString);
-                    JSONArray jsonArray=jsonObject.getJSONArray("people");
-                    for (int i=0;i<jsonArray.length();i++){
-                        JSONObject jsonObject1=jsonArray.getJSONObject(i);
-                        String name = jsonObject1.getString("name");
-                        String gender = jsonObject1.getString("gender");
-                        String skin_color = jsonObject1.getString("skin_color");
-                        String films = jsonObject1.getString("films");
-                        String species = jsonObject1.getString("species");
-                        String starships = jsonObject1.getString("starships");
-                        String vehicles =jsonObject1.getString("vehicles");
-                        String url = jsonObject1.getString("url");
-
-                     String [] arrayString ={name,gender,skin_color,films,species,starships,vehicles,url};
-
-                     nameList.add(arrayString);
-                    }
-                } catch (JSONException e) {
-                    e.printStackTrace();
-                    Toast.makeText(getApplicationContext(), "Error lectura del JSON",Toast.LENGTH_SHORT).show();
-                    runOnUiThread(new Runnable() {
-                        @Override
-                        public void run() {
-                            Toast.makeText(getApplicationContext(), "Error lectura del JSON",Toast.LENGTH_SHORT).show();
-                        }
-                    });
-                }
-
-            } else{
-                Toast.makeText(getApplicationContext(), " ERROR EN EL SERVICIO",Toast.LENGTH_SHORT).show();
-                        runOnUiThread(new Runnable() {
-                            @Override
-                            public void run() {
-                                Toast.makeText(getApplicationContext(), "ERROR EN EL SERVICIO",Toast.LENGTH_SHORT).show();
-                            }
-                        });
-            }
-            return null;
-        }
     }
 
     //Adaptador
